@@ -12,6 +12,15 @@ section>div {
  flex-basis: 9%;
  height: 10%;
  border: 1px solid #ddd;
+ font-size: .7rem;
+}
+
+button {
+ border: 1px solid #ddd;
+ background-color: #fff;
+ font-size: 2rem;
+ margin: 1rem auto;
+ display: block;
 }
 
 .black {
