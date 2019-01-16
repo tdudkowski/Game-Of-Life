@@ -4,11 +4,12 @@ section.board {
  display: flex;
  flex-wrap: wrap;
  margin: 4em auto;
+ box-sizing: border-box;
 }
 
 section>div {
  flex: 1;
- flex-basis: 10%;
+ flex-basis: 9%;
  height: 10%;
  border: 1px solid #ddd;
 }
