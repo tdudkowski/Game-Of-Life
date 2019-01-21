@@ -2,155 +2,159 @@
 <html lang="en">
 
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <meta http-equiv="X-UA-Compatible" content="ie=edge">
- <title>LifeGames</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Conway's Game of Life</title>
 </head>
 <link rel="stylesheet" href="style.css">
 
 <body>
+  <nav><a href="https://tdudkowski.github.io/">to Github Page</a> | <a href="https://github.com/tdudkowski/Game-Of-Life">repo
+      of Game of Life</a></nav>
 
- <section class="board">
-  <div data-key="00"></div>
-  <div data-key="01"></div>
-  <div data-key="02"></div>
-  <div data-key="03"></div>
-  <div data-key="04"></div>
-  <div data-key="05"></div>
-  <div data-key="06"></div>
-  <div data-key="07"></div>
-  <div data-key="08"></div>
-  <div data-key="09"></div>
-  <div data-key="10"></div>
-  <div data-key="11"></div>
-  <div data-key="12"></div>
-  <div data-key="13"></div>
-  <div data-key="14"></div>
-  <div data-key="15"></div>
-  <div data-key="16"></div>
-  <div data-key="17"></div>
-  <div data-key="18"></div>
-  <div data-key="19"></div>
-  <div data-key="20"></div>
-  <div data-key="21"></div>
-  <div data-key="22"></div>
-  <div data-key="23"></div>
-  <div data-key="24"></div>
-  <div data-key="25"></div>
-  <div data-key="26"></div>
-  <div data-key="27"></div>
-  <div data-key="28"></div>
-  <div data-key="29"></div>
-  <div data-key="30"></div>
-  <div data-key="31"></div>
-  <div data-key="32"></div>
-  <div data-key="33"></div>
-  <div data-key="34"></div>
-  <div data-key="35"></div>
-  <div data-key="36"></div>
-  <div data-key="37"></div>
-  <div data-key="38"></div>
-  <div data-key="39"></div>
-  <div data-key="40"></div>
-  <div data-key="41"></div>
-  <div data-key="42"></div>
-  <div data-key="43"></div>
-  <div data-key="44"></div>
-  <div data-key="45"></div>
-  <div data-key="46"></div>
-  <div data-key="47"></div>
-  <div data-key="48"></div>
-  <div data-key="49"></div>
-  <div data-key="50"></div>
-  <div data-key="51"></div>
-  <div data-key="52"></div>
-  <div data-key="53"></div>
-  <div data-key="54"></div>
-  <div data-key="55"></div>
-  <div data-key="56"></div>
-  <div data-key="57"></div>
-  <div data-key="58"></div>
-  <div data-key="59"></div>
-  <div data-key="60"></div>
-  <div data-key="61"></div>
-  <div data-key="62"></div>
-  <div data-key="63"></div>
-  <div data-key="64"></div>
-  <div data-key="65"></div>
-  <div data-key="66"></div>
-  <div data-key="67"></div>
-  <div data-key="68"></div>
-  <div data-key="69"></div>
-  <div data-key="70"></div>
-  <div data-key="71"></div>
-  <div data-key="72"></div>
-  <div data-key="73"></div>
-  <div data-key="74"></div>
-  <div data-key="75"></div>
-  <div data-key="76"></div>
-  <div data-key="77"></div>
-  <div data-key="78"></div>
-  <div data-key="79"></div>
-  <div data-key="80"></div>
-  <div data-key="81"></div>
-  <div data-key="82"></div>
-  <div data-key="83"></div>
-  <div data-key="84"></div>
-  <div data-key="85"></div>
-  <div data-key="86"></div>
-  <div data-key="87"></div>
-  <div data-key="88"></div>
-  <div data-key="89"></div>
-  <div data-key="90"></div>
-  <div data-key="91"></div>
-  <div data-key="92"></div>
-  <div data-key="93"></div>
-  <div data-key="94"></div>
-  <div data-key="95"></div>
-  <div data-key="96"></div>
-  <div data-key="97"></div>
-  <div data-key="98"></div>
-  <div data-key="99"></div>
- </section>
+  <section class="board">
+    <div data-key="00"></div>
+    <div data-key="01"></div>
+    <div data-key="02"></div>
+    <div data-key="03"></div>
+    <div data-key="04"></div>
+    <div data-key="05"></div>
+    <div data-key="06"></div>
+    <div data-key="07"></div>
+    <div data-key="08"></div>
+    <div data-key="09"></div>
+    <div data-key="10"></div>
+    <div data-key="11"></div>
+    <div data-key="12"></div>
+    <div data-key="13"></div>
+    <div data-key="14"></div>
+    <div data-key="15"></div>
+    <div data-key="16"></div>
+    <div data-key="17"></div>
+    <div data-key="18"></div>
+    <div data-key="19"></div>
+    <div data-key="20"></div>
+    <div data-key="21"></div>
+    <div data-key="22"></div>
+    <div data-key="23"></div>
+    <div data-key="24"></div>
+    <div data-key="25"></div>
+    <div data-key="26"></div>
+    <div data-key="27"></div>
+    <div data-key="28"></div>
+    <div data-key="29"></div>
+    <div data-key="30"></div>
+    <div data-key="31"></div>
+    <div data-key="32"></div>
+    <div data-key="33"></div>
+    <div data-key="34"></div>
+    <div data-key="35"></div>
+    <div data-key="36"></div>
+    <div data-key="37"></div>
+    <div data-key="38"></div>
+    <div data-key="39"></div>
+    <div data-key="40"></div>
+    <div data-key="41"></div>
+    <div data-key="42"></div>
+    <div data-key="43"></div>
+    <div data-key="44"></div>
+    <div data-key="45"></div>
+    <div data-key="46"></div>
+    <div data-key="47"></div>
+    <div data-key="48"></div>
+    <div data-key="49"></div>
+    <div data-key="50"></div>
+    <div data-key="51"></div>
+    <div data-key="52"></div>
+    <div data-key="53"></div>
+    <div data-key="54"></div>
+    <div data-key="55"></div>
+    <div data-key="56"></div>
+    <div data-key="57"></div>
+    <div data-key="58"></div>
+    <div data-key="59"></div>
+    <div data-key="60"></div>
+    <div data-key="61"></div>
+    <div data-key="62"></div>
+    <div data-key="63"></div>
+    <div data-key="64"></div>
+    <div data-key="65"></div>
+    <div data-key="66"></div>
+    <div data-key="67"></div>
+    <div data-key="68"></div>
+    <div data-key="69"></div>
+    <div data-key="70"></div>
+    <div data-key="71"></div>
+    <div data-key="72"></div>
+    <div data-key="73"></div>
+    <div data-key="74"></div>
+    <div data-key="75"></div>
+    <div data-key="76"></div>
+    <div data-key="77"></div>
+    <div data-key="78"></div>
+    <div data-key="79"></div>
+    <div data-key="80"></div>
+    <div data-key="81"></div>
+    <div data-key="82"></div>
+    <div data-key="83"></div>
+    <div data-key="84"></div>
+    <div data-key="85"></div>
+    <div data-key="86"></div>
+    <div data-key="87"></div>
+    <div data-key="88"></div>
+    <div data-key="89"></div>
+    <div data-key="90"></div>
+    <div data-key="91"></div>
+    <div data-key="92"></div>
+    <div data-key="93"></div>
+    <div data-key="94"></div>
+    <div data-key="95"></div>
+    <div data-key="96"></div>
+    <div data-key="97"></div>
+    <div data-key="98"></div>
+    <div data-key="99"></div>
+  </section>
 
- <button>[ CLICK ]</button>
+  <button>[ CLICK ]</button>
 
- <main>
-  <div>
-   <p>Cellular Automaton - <strong>Conway's Game of Life</strong> (<a href="https://en.wikipedia.org/wiki/Conway's_Game_of_Life">en.wikipedia.org/wiki/Conway's_Game_of_Life</a>)</p>
-   <h3>Rules</h3>
-   <ul>
-    <li>Any live cell with &lt; 2 live neighbors dies.</li>
-    <li>Any live cell with==(2||3) live neighbors lives.</li>
-    <li>Any live cell with> 3live neighbors dies.</li>
-    <li>Any dead cell with == 3 live neighbors becomes a live cell.</li>
-   </ul>
-  </div>
-  <div>
-   <p>At this moment there're not correct transformation, but basic engine (stil being far from optimal) works. </p>
-   <h3>Info</h3>
-   <ul>
-    <li>Click on a square to change its color black/white - white is default at start, this is non-life. Live Cell is
-     black.</li>
-    <li>Button click makes one cycle of Life.</li>
-    <li>Cell can be clicked/modified at any moment.</li>
-   </ul>
-   <h3>ToDo</h3>
-   <ul>
-    <li>Button makes one transformation by rules, not correct ones and positions are calculated in a wrong way for
-     Cells on edges.</li>
-    <li>Those numbers one can see on white squares are ids of a neighbours: left, right, top, and bottom ones, at the
-     end is id of the square.</li>
-    <li>Needs revision: method of calculation whiteORblack should make one request per Cell, and make an array of
-     values; edges should have non-zero values, probably 3-digit values must be used.</li>
-   </ul>
-   <div>
-    </ul>
+  <main>
+    <div>
+      <p>Cellular Automaton - <strong>Conway's Game of Life</strong> (<a href="https://en.wikipedia.org/wiki/Conway's_Game_of_Life">en.wikipedia.org/wiki/Conway's_Game_of_Life</a>)</p>
+      <h3>Rules</h3>
+      <ul>
+        <li>Any live cell with &lt; 2 live neighbors dies.</li>
+        <li>Any live cell with==(2||3) live neighbors lives.</li>
+        <li>Any live cell with> 3live neighbors dies.</li>
+        <li>Any dead cell with == 3 live neighbors becomes a live cell.</li>
+      </ul>
+    </div>
+    <div>
+      <p>At this moment there're not correct transformation, but basic engine (stil being far from optimal) works. </p>
+      <h3>Info</h3>
+      <ul>
+        <li>Click on a square to change its color black/white - white is default at start, this is non-life. Live Cell
+          is
+          black.</li>
+        <li>Button click makes one cycle of Life.</li>
+        <li>Cell can be clicked/modified at any moment.</li>
+      </ul>
+      <h3>ToDo</h3>
+      <ul>
+        <li>Button makes one transformation by rules, not correct ones and positions are calculated in a wrong way for
+          Cells on edges.</li>
+        <li>Those numbers one can see on white squares are ids of a neighbours: left, right, top, and bottom ones, at
+          the
+          end is id of the square.</li>
+        <li>Needs revision: method of calculation whiteORblack should make one request per Cell, and make an array of
+          values; edges should have non-zero values, probably 3-digit values must be used.</li>
+      </ul>
+      <div>
+        </ul>
 
- </main>
+  </main>
 
- <script src="main.js"></script>
+  <script src="main.js"></script>
 </body>
 
 </html>
