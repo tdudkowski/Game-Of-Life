@@ -27,22 +27,45 @@ const count = () => {
   if (document.querySelector(`[data-key='${top}']`).classList.contains('black')) {
    thisCounter++;
   }
+  if (document.querySelector(`[data-key='${top-1}']`)) {
+   if (document.querySelector(`[data-key='${top-1}']`).classList.contains('black')) {
+    thisCounter++;
+   }
+  }
+  if (document.querySelector(`[data-key='${top+1}']`)) {
+   if (document.querySelector(`[data-key='${top+1}']`).classList.contains('black')) {
+    thisCounter++;
+   }
+  }
   if (document.querySelector(`[data-key='${down}']`).classList.contains('black')) {
    thisCounter++;
   }
+  if (document.querySelector(`[data-key='${down-1}']`)) {
+   if (document.querySelector(`[data-key='${down-1}']`).classList.contains('black')) {
+    thisCounter++;
+   }
+  }
+  if (document.querySelector(`[data-key='${down+1}']`)) {
+   if (document.querySelector(`[data-key='${down+1}']`).classList.contains('black')) {
+    thisCounter++;
+   }
+  }
   console.log(boardField.dataset.key, thisCounter);
 
-  if (thisCounter < 2) {
-   boardField.classList.toggle('black')
+  if (thisCounter < 2 || thisCounter > 3) {
+   boardField.classList.remove('black')
   }
 
-  if (thisCounter == 2) {
+  if (thisCounter == 3 && !(document.querySelector(`[data-key='${boardField.dataset.key}']`).classList.contains('black'))) {
    boardField.classList.add('black')
   }
 
-  if (thisCounter == 4) {
-   boardField.classList.toggle('black')
+  if (thisCounter == (2 || 3) && document.querySelector(`[data-key='${boardField.dataset.key}']`).classList.contains('black')) {
+   boardField.classList.add('black')
   }
+  // if (thisCounter == 4) {
+  //  boardField.classList.toggle('black')
+  // }
 
   thisCounter = 0;
  });

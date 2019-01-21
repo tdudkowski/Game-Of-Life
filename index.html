@@ -117,14 +117,37 @@
  <button>[ CLICK ]</button>
 
  <main>
-  <p>Game of Life, at this moment there're not correct transformation, but basic engine is OK.</p>
-  <ul>
-   <li>Click on a square to change its color black/white - white is default at start</li>
-   <li>Button makes one transformation by rules, not correct ones and positions are calculated in a wrong way</li>
-   <li>Those numbers one can see on white squares are ids of a neighbours: left, right, top, and bottom ones, at the
-    end is id of the square</li>
-   <li>Needs revision</li>
-  </ul>
+  <div>
+   <p>Cellular Automaton - <strong>Conway's Game of Life</strong> (<a href="https://en.wikipedia.org/wiki/Conway's_Game_of_Life">en.wikipedia.org/wiki/Conway's_Game_of_Life</a>)</p>
+   <h3>Rules</h3>
+   <ul>
+    <li>Any live cell with &lt; 2 live neighbors dies.</li>
+    <li>Any live cell with==(2||3) live neighbors lives.</li>
+    <li>Any live cell with> 3live neighbors dies.</li>
+    <li>Any dead cell with == 3 live neighbors becomes a live cell.</li>
+   </ul>
+  </div>
+  <div>
+   <p>At this moment there're not correct transformation, but basic engine (stil being far from optimal) works. </p>
+   <h3>Info</h3>
+   <ul>
+    <li>Click on a square to change its color black/white - white is default at start, this is non-life. Live Cell is
+     black.</li>
+    <li>Button click makes one cycle of Life.</li>
+    <li>Cell can be clicked/modified at any moment.</li>
+   </ul>
+   <h3>ToDo</h3>
+   <ul>
+    <li>Button makes one transformation by rules, not correct ones and positions are calculated in a wrong way for
+     Cells on edges.</li>
+    <li>Those numbers one can see on white squares are ids of a neighbours: left, right, top, and bottom ones, at the
+     end is id of the square.</li>
+    <li>Needs revision: method of calculation whiteORblack should make one request per Cell, and make an array of
+     values; edges should have non-zero values, probably 3-digit values must be used.</li>
+   </ul>
+   <div>
+    </ul>
+
  </main>
 
  <script src="main.js"></script>
