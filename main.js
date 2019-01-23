@@ -13,7 +13,6 @@ const countFields = function (panelResult) {
   if (x != 11) {
    left = ("00" + left).slice(-4);
   } else {
-   // console.log(x)
    x = 19;
    left = Math.abs(Number(`${y}${x-1}`));
    left = ("00" + left).slice(-4);
@@ -37,10 +36,7 @@ const countFields = function (panelResult) {
   downL = ("00" + downL).slice(-4);
   let downR = Math.abs(Number(`${y-(-1)}${x-(-1)}`));
   downR = ("00" + downR).slice(-4);
-  boardField.textContent = `l${downL}, r${downR} id${boardField.dataset.key}`;
-
-  // // boardField.textContent = `l${left}, r${right}, t${top}, d${down}, id${boardField.dataset.key}`;
-  // boardField.textContent = `tl${topL}, tr${topR}, dl${downL}, dr${downR}, y${y}, x${x}`;
+  boardField.textContent = `id${boardField.dataset.key}`;
 
   let valOfIt = panelResult.filter(val => {
    return val.id === boardField.dataset.key
@@ -51,8 +47,6 @@ const countFields = function (panelResult) {
     return val.id == Number(left);
    })
   }
-
-  // console.log(Object.values(left)[0].val, right[0], Object.values(valOfIt)[0]);
 
   right = panelResult.filter(val => {
    return val.id === right
@@ -65,8 +59,6 @@ const countFields = function (panelResult) {
   down = panelResult.filter(val => {
    return val.id === down
   })
-
-  // boardField.textContent = `l${left}, r${right}, id${boardField.dataset.key}`;
 
   topL = panelResult.filter(val => {
    return val.id === topL
@@ -83,9 +75,6 @@ const countFields = function (panelResult) {
   downR = panelResult.filter(val => {
    return val.id === downR
   })
-
-  // // console.log(panelResult[boardField.dataset.key], Object.values(valOfIt)[0].val, thisCounter, left[0].val, right[0].val);
-  // // console.log(boardField.dataset.key, thisCounter);
 
   if (left.length != 0 && Object.values(left)[0].val) {
    thisCounter++;
@@ -160,7 +149,6 @@ const render = () => {
  boardFields.forEach(boardField => boardField.addEventListener('click', () => {
   boardField.classList.toggle('black');
   boardField.textContent = boardField.dataset.key;
-  console.log(boardField.dataset.key);
  }));
 }
 
