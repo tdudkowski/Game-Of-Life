@@ -4,11 +4,14 @@ const btn = document.querySelector('button');
 const countFields = function (panelResult) {
  let thisCounter = 0;
 
+ // 3. MAKE NEW STEP
  boardFields.forEach(boardField => {
   let fieldValue = [...boardField.dataset.key];
   let y = fieldValue[0] + fieldValue[1];
   let x = fieldValue[2] + fieldValue[3];
 
+  // 3.1 FIND NEIGHBOURS
+  // left
   let left = Math.abs(Number(`${y}${x-1}`));
   if (x != 11) {
    left = ("00" + left).slice(-4);
@@ -17,27 +20,36 @@ const countFields = function (panelResult) {
    left = Math.abs(Number(`${y}${x-1}`));
    left = ("00" + left).slice(-4);
   }
+  // right
   let right = Math.abs(Number(`${y}${x-(-1)}`));
   right = ("00" + right).slice(-4);
+  // top
   let top = Math.abs(Number(`${y-1}${x}`));
   if (top <= '019') {
    top = ("00" + top).slice(-4);
   } else {
    top = ("0" + top).slice(-4);
   }
+  // down
   let down = Math.abs(Number(`${y-(-1)}${x}`));
   down = ("0" + down).slice(-4);
-
+  // top-left
   let topL = Math.abs(Number(`${y-1}${x-1}`));
   topL = ("00" + topL).slice(-4);
+  // top-right
   let topR = Math.abs(Number(`${y-1}${x-(-1)}`));
   topR = ("00" + topR).slice(-4);
+  // down-left
   let downL = Math.abs(Number(`${y-(-1)}${x-1}`));
   downL = ("00" + downL).slice(-4);
+  // down-right
   let downR = Math.abs(Number(`${y-(-1)}${x-(-1)}`));
   downR = ("00" + downR).slice(-4);
+
+  // show ID
   boardField.textContent = `id${boardField.dataset.key}`;
 
+  // 3.2 COLLECTING VALUES
   let valOfIt = panelResult.filter(val => {
    return val.id === boardField.dataset.key
   })
@@ -76,6 +88,7 @@ const countFields = function (panelResult) {
    return val.id === downR
   })
 
+  // 3.3 COUNTING POTENTIAL
   if (left.length != 0 && Object.values(left)[0].val) {
    thisCounter++;
   }
@@ -108,6 +121,7 @@ const countFields = function (panelResult) {
    thisCounter++;
   }
 
+  // 3.4 DEAD OR ALIVE
   if (thisCounter < 2 || thisCounter > 3) {
    boardField.classList.remove('black')
   }
@@ -124,10 +138,12 @@ const countFields = function (panelResult) {
   //  boardField.classList.toggle('black')
   // }
 
+  // reset counter
   thisCounter = 0;
  })
 }
 
+// 2. MAKE AN ARRAY
 const countPanel = () => {
  const panelResult = [];
  boardFields.forEach(boardField => {
@@ -137,6 +153,7 @@ const countPanel = () => {
 
   let wob = document.querySelector(`[data-key='${y}${x}']`).classList.contains('black');
 
+  // write to an array
   panelResult.push({
    id: boardField.dataset.key,
    val: wob // wob = white OR black
@@ -145,6 +162,7 @@ const countPanel = () => {
  countFields(panelResult);
 }
 
+// 1. CLICK2BLACK
 const render = () => {
  boardFields.forEach(boardField => boardField.addEventListener('click', () => {
   boardField.classList.toggle('black');
