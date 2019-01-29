@@ -7,47 +7,48 @@ const countFields = function (panelResult) {
  // 3. MAKE NEW STEP
  boardFields.forEach(boardField => {
   let fieldValue = [...boardField.dataset.key];
-  let y = fieldValue[0] + fieldValue[1];
-  let x = fieldValue[2] + fieldValue[3];
+  let y = Number(fieldValue[0] + fieldValue[1]);
+  let x = Number(fieldValue[2] + fieldValue[3]);
 
   // 3.1 FIND NEIGHBOURS
   // left
-  let left = Math.abs(Number(`${y}${x-1}`));
-  if (x != 11) {
-   left = ("00" + left).slice(-4);
+  let left = `${y}${x-1}`;
+  if (x == 10) { // tu trzeba bedzie zmienic na 10
+   // x = 19;
+   // left = `${y}${x-1}`;
+   left = '10'; //normalizacja
+   left = ("0" + left).slice(-4);
   } else {
-   x = 19;
-   left = Math.abs(Number(`${y}${x-1}`));
    left = ("00" + left).slice(-4);
   }
   // right
-  let right = Math.abs(Number(`${y}${x-(-1)}`));
+  let right = `${y}${x+1}`;
   right = ("00" + right).slice(-4);
   // top
-  let top = Math.abs(Number(`${y-1}${x}`));
+  let top = `${y-1}${x}`;
   if (top <= '019') {
    top = ("00" + top).slice(-4);
   } else {
    top = ("0" + top).slice(-4);
   }
   // down
-  let down = Math.abs(Number(`${y-(-1)}${x}`));
+  let down = `${y+1}${x}`;
   down = ("0" + down).slice(-4);
   // top-left
-  let topL = Math.abs(Number(`${y-1}${x-1}`));
+  let topL = `${y-1}${x-1}`;
   topL = ("00" + topL).slice(-4);
   // top-right
-  let topR = Math.abs(Number(`${y-1}${x-(-1)}`));
+  let topR = `${y-1}${x+1}`;
   topR = ("00" + topR).slice(-4);
   // down-left
-  let downL = Math.abs(Number(`${y-(-1)}${x-1}`));
+  let downL = `${y+1}${x-1}`;
   downL = ("00" + downL).slice(-4);
   // down-right
-  let downR = Math.abs(Number(`${y-(-1)}${x-(-1)}`));
+  let downR = `${y+1}${x+1}`;
   downR = ("00" + downR).slice(-4);
 
   // show ID
-  boardField.textContent = `id${boardField.dataset.key}`;
+  boardField.textContent = `id${boardField.dataset.key}, dl${downL}, dr${downR}`;
 
   // 3.2 COLLECTING VALUES
   let valOfIt = panelResult.filter(val => {
