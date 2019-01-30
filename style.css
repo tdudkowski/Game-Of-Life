@@ -40,21 +40,18 @@ section>div {
 .remote {
  max-width: 50rem;
  margin: 1rem auto;
- display: block;
  display: flex;
+ background-color: #efefef;
 }
 
 div.counter {
  flex: 1;
  display: flex;
+ flex-wrap: wrap;
  width: 12rem;
- height: 3rem;
  background-color: #ddd;
- border: 2px solid #999;
- line-height: 2rem;
- font-size: 1.7rem;
+ border: 1px solid #999;
  margin: 1rem;
- padding: 0 .4rem;
 }
 
 div.counter p {
@@ -65,17 +62,18 @@ div.counter p {
 
 div.counter span {
  flex: 1;
- display: inline-block;
- /* height: 100%; */
+ text-align: center;
+ padding: .3rem 1rem;
+ font-size: 2rem;
  font-weight: bold;
  background-color: #777;
  color: #eee;
- padding: .2rem 1rem;
- line-height: 3rem;
 }
 
 button.reset {
  flex: 1;
+ flex-basis: 100%;
+ line-height: 1.5rem;
  margin: .1rem 1rem;
  padding: 0 .5rem;
  border: 2px solid #aaa;
