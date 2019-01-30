@@ -46,27 +46,47 @@ section>div {
 
 div.counter {
  flex: 1;
+ display: flex;
  width: 12rem;
- height: 2rem;
+ height: 3rem;
+
  background-color: #ddd;
  border: 2px solid #999;
  line-height: 2rem;
- font-size: 1.5rem;
+ font-size: 1.7rem;
  margin: 1rem;
- padding: .4rem;
+ padding: 0 .4rem;
+}
+
+div.counter p {
+ padding: .2rem;
+ margin: 0;
+ line-height: 3rem;
 }
 
 div.counter span {
+ flex: 1;
+ display: inline-block;
+ /* height: 100%; */
  font-weight: bold;
- background-color: #333;
+ background-color: #777;
  color: #eee;
- padding: .5rem 1rem;
+ padding: .2rem 1rem;
+ line-height: 3rem;
 }
 
-button {
+button.reset {
+ flex: 1;
+ margin: .1rem 1rem;
+ padding: .5rem;
+ border: 2px solid #aaa;
+ background-color: #fff;
+}
+
+button.first_mover {
  flex: 1;
  margin: 1rem;
- border: 1px solid #ddd;
+ border: 3px solid #ddd;
  background-color: #fff;
  font-size: 2rem;
 }

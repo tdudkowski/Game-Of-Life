@@ -1,5 +1,6 @@
 const boardFields = [...document.querySelectorAll("section.board > div")];
-const btn = document.querySelector('button');
+const reset = document.querySelector('button.reset');
+const btn = document.querySelector('button.first_mover');
 const counter = document.querySelector('.counter span');
 let counterValue = 0;
 
@@ -208,6 +209,12 @@ const render = () => {
  }));
 }
 
+// RESET COUNTER
+const resetCounter = () => {
+ counter.textContent = 0;
+}
+
 render();
 
 btn.addEventListener('click', countPanel)
+reset.addEventListener('click', resetCounter)
