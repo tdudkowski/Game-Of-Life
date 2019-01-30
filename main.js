@@ -48,7 +48,7 @@ const countFields = function (panelResult) {
   downR = ("00" + downR).slice(-4);
 
   // show ID
-  boardField.textContent = `id${boardField.dataset.key}, l${left}, dr${downR}`;
+  // boardField.textContent = `id${boardField.dataset.key}, l${left}, dr${downR}`;
   // console.log(boardField.dataset.key);
 
   // 3.2 COLLECTING VALUES
@@ -90,14 +90,14 @@ const countFields = function (panelResult) {
    return val.id === downR
   })
 
-  // BORDER CONTROL
+  // 3.3 BORDER CONTROL
 
   // definitions
   let borderLineV = boardField.dataset.key.slice(-2);
   let borderLineH = boardField.dataset.key.slice(-4, 2);
   // left
   if (borderLineV <= 11 && left.length != 0 && topL.length != 0 && downL.length != 0) {
-   // let leftS = left[0]
+   // let leftS = left[0] longer way
    // leftS['val'] = false;
    left[0]['val'] = false;
    topL[0]['val'] = false;
@@ -125,7 +125,7 @@ const countFields = function (panelResult) {
 
 
 
-  // 3.3 COUNTING POTENTIAL
+  // 3.4 COUNTING POTENTIAL
   if (left.length != 0 && Object.values(left)[0].val) {
    thisCounter++;
   }
@@ -158,7 +158,7 @@ const countFields = function (panelResult) {
    thisCounter++;
   }
 
-  // 3.4 DEAD OR ALIVE
+  // 3.5 DEAD OR ALIVE
   if (thisCounter < 2 || thisCounter > 3) {
    boardField.classList.remove('black')
   }
