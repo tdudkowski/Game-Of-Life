@@ -1,3 +1,8 @@
+body {
+ margin: 0;
+ font-family: sans-serif;
+}
+
 nav {
  position: fixed;
  left: 1rem;
@@ -32,12 +37,38 @@ section>div {
  font-size: .7rem;
 }
 
+.remote {
+ max-width: 50rem;
+ margin: 1rem auto;
+ display: block;
+ display: flex;
+}
+
+div.counter {
+ flex: 1;
+ width: 12rem;
+ height: 2rem;
+ background-color: #ddd;
+ border: 2px solid #999;
+ line-height: 2rem;
+ font-size: 1.5rem;
+ margin: 1rem;
+ padding: .4rem;
+}
+
+div.counter span {
+ font-weight: bold;
+ background-color: #333;
+ color: #eee;
+ padding: .5rem 1rem;
+}
+
 button {
+ flex: 1;
+ margin: 1rem;
  border: 1px solid #ddd;
  background-color: #fff;
  font-size: 2rem;
- margin: 1rem auto;
- display: block;
 }
 
 .black {

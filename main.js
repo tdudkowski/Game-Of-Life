@@ -1,5 +1,7 @@
 const boardFields = [...document.querySelectorAll("section.board > div")];
 const btn = document.querySelector('button');
+const counter = document.querySelector('.counter span');
+let counterValue = 0;
 
 const countFields = function (panelResult) {
  let thisCounter = 0;
@@ -180,6 +182,7 @@ const countFields = function (panelResult) {
 
 // 2. MAKE AN ARRAY
 const countPanel = () => {
+ counter.textContent = ++counterValue;
  const panelResult = [];
  boardFields.forEach(boardField => {
   let fieldValue = [...boardField.dataset.key];
@@ -201,7 +204,7 @@ const countPanel = () => {
 const render = () => {
  boardFields.forEach(boardField => boardField.addEventListener('click', () => {
   boardField.classList.toggle('black');
-  boardField.textContent = boardField.dataset.key;
+  // boardField.textContent = boardField.dataset.key;
  }));
 }
 
