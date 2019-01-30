@@ -52,3 +52,9 @@ main {
  margin: 1rem auto;
  padding: 1rem;
 }
+
+section.board div.margin {
+ /* flex-basis: 0%;
+ height: 10%; */
+ /* display: none; */
+}

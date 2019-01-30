@@ -14,6 +14,7 @@
       of Game of Life</a></nav>
 
   <section class="board">
+    <!-- <div data-key="0110" class="margin"></div> -->
     <div data-key="0111"></div>
     <div data-key="0112"></div>
     <div data-key="0113"></div>
@@ -24,6 +25,7 @@
     <div data-key="0118"></div>
     <div data-key="0119"></div>
     <div data-key="0120"></div>
+    <!-- <div data-key="0210" class="margin"></div> -->
     <div data-key="0211"></div>
     <div data-key="0212"></div>
     <div data-key="0213"></div>
@@ -34,6 +36,7 @@
     <div data-key="0218"></div>
     <div data-key="0219"></div>
     <div data-key="0220"></div>
+    <!-- <div data-key="0310" class="margin"></div> -->
     <div data-key="0311"></div>
     <div data-key="0312"></div>
     <div data-key="0313"></div>
@@ -44,6 +47,7 @@
     <div data-key="0318"></div>
     <div data-key="0319"></div>
     <div data-key="0320"></div>
+    <!-- <div data-key="0410" class="margin"></div> -->
     <div data-key="0411"></div>
     <div data-key="0412"></div>
     <div data-key="0413"></div>
@@ -54,6 +58,7 @@
     <div data-key="0418"></div>
     <div data-key="0419"></div>
     <div data-key="0420"></div>
+    <!-- <div data-key="0510" class="margin"></div> -->
     <div data-key="0511"></div>
     <div data-key="0512"></div>
     <div data-key="0513"></div>
@@ -64,6 +69,7 @@
     <div data-key="0518"></div>
     <div data-key="0519"></div>
     <div data-key="0520"></div>
+    <!-- <div data-key="0610" class="margin"></div> -->
     <div data-key="0611"></div>
     <div data-key="0612"></div>
     <div data-key="0613"></div>
@@ -74,6 +80,7 @@
     <div data-key="0618"></div>
     <div data-key="0619"></div>
     <div data-key="0620"></div>
+    <!-- <div data-key="0710" class="margin"></div> -->
     <div data-key="0711"></div>
     <div data-key="0712"></div>
     <div data-key="0713"></div>
@@ -84,6 +91,7 @@
     <div data-key="0718"></div>
     <div data-key="0719"></div>
     <div data-key="0720"></div>
+    <!-- <div data-key="0810" class="margin"></div> -->
     <div data-key="0811"></div>
     <div data-key="0812"></div>
     <div data-key="0813"></div>
@@ -94,6 +102,7 @@
     <div data-key="0818"></div>
     <div data-key="0819"></div>
     <div data-key="0820"></div>
+    <!-- <div data-key="0910" class="margin"></div> -->
     <div data-key="0911"></div>
     <div data-key="0912"></div>
     <div data-key="0913"></div>
@@ -104,6 +113,7 @@
     <div data-key="0918"></div>
     <div data-key="0919"></div>
     <div data-key="0920"></div>
+    <!-- <div data-key="1010" class="margin"></div> -->
     <div data-key="1011"></div>
     <div data-key="1012"></div>
     <div data-key="1013"></div>
@@ -123,28 +133,35 @@
       <p>Cellular Automaton - <strong>Conway's Game of Life</strong> (<a href="https://en.wikipedia.org/wiki/Conway's_Game_of_Life">en.wikipedia.org/wiki/Conway's_Game_of_Life</a>)</p>
       <h3>Rules</h3>
       <ul>
-        <li>Any live cell with &lt; 2 live neighbors dies.</li>
-        <li>Any live cell with==(2||3) live neighbors lives.</li>
-        <li>Any live cell with> 3live neighbors dies.</li>
-        <li>Any dead cell with == 3 live neighbors becomes a live cell.</li>
+        <li>Any living cell with &lt; 2 living neighbors dies.</li>
+        <li>Any living cell with == (2||3) living neighbors lives.</li>
+        <li>Any living cell with > 3 living neighbors dies.</li>
+        <li>Any dead cell with == 3 living neighbors becomes a live cell.</li>
+      </ul>
+      <h3>Border Rules</h3>
+      <p>Conway designed this Game of Life for an infinitive border, but in real world of small apps (like this) the
+        border is inevitable, real, and it must have rules. In any case they are arbitrary.</p>
+      <ul>
+        <li>Border of the Board is a dead edge, any nonexistend but imaginable Cell behind it has turned out
+          possibility to became Black (aka living) in any conditions</li>
+        <li>Cells on the border have counted values only of an existing (visilble) neighbors</li>
       </ul>
     </div>
     <div>
-      <p>At this moment engine works, and transformation is correct (glider moves fine). Edges
-        are still quirky, and I'm pretty much sure that engine can be much more optimized.</p>
       <h3>Info</h3>
+      <p>At this moment engine works, and transformation is correct (glider moves fine). As far as I tested all is OK.
+        Engine can be much more optimized.</p>
       <ul>
-        <li>Click on a square to change its color black/white - white is default at start, this is non-life. Live Cell
-          is black.</li>
+        <li>Click on a square to change its color black/white - white is default at start, this is non-life. Living
+          Cell is black.</li>
         <li>Button click makes one cycle of Life.</li>
         <li>Cell can be clicked/modified at any moment.</li>
       </ul>
       <h3>ToDo</h3>
       <ul>
-        <li>Button makes one transformation by rules, and asa far as tested they're correct. Cells on edges are quirky.</li>
-        <li>Those numbers one can see are an ids of the Cells.</li>
-        <li>Needs revision: method of calculation whiteORblack still can be optimized; edges should have normal
-          bevaviour.</li>
+        <li>Optimising the engine</li>
+        <li>Make it pseudoinfinitive: add two or three row on each side, all invisible for user with killing border on
+          the real edge, in fact I started doing it, but this is real boring and tedious work.</li>
       </ul>
       <div>
         </ul>

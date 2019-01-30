@@ -10,17 +10,17 @@ const countFields = function (panelResult) {
   let y = Number(fieldValue[0] + fieldValue[1]);
   let x = Number(fieldValue[2] + fieldValue[3]);
 
+  // repairing 10-1 problem
+  let xless = x - 1;
+  if (x == 10) {
+   xless = ("0" + (x - 1)).slice(-2);;
+  }
+
   // 3.1 FIND NEIGHBOURS
   // left
-  let left = `${y}${x-1}`;
-  if (x == 10) { // tu trzeba bedzie zmienic na 10
-   // x = 19;
-   // left = `${y}${x-1}`;
-   left = '10'; //normalizacja
-   left = ("0" + left).slice(-4);
-  } else {
-   left = ("00" + left).slice(-4);
-  }
+  let left = `${y}${xless}`;
+  left = ("0" + left).slice(-4);
+
   // right
   let right = `${y}${x+1}`;
   right = ("00" + right).slice(-4);
@@ -35,20 +35,21 @@ const countFields = function (panelResult) {
   let down = `${y+1}${x}`;
   down = ("0" + down).slice(-4);
   // top-left
-  let topL = `${y-1}${x-1}`;
+  let topL = `${y-1}${xless}`;
   topL = ("00" + topL).slice(-4);
   // top-right
   let topR = `${y-1}${x+1}`;
   topR = ("00" + topR).slice(-4);
   // down-left
-  let downL = `${y+1}${x-1}`;
+  let downL = `${y+1}${xless}`;
   downL = ("00" + downL).slice(-4);
   // down-right
   let downR = `${y+1}${x+1}`;
   downR = ("00" + downR).slice(-4);
 
   // show ID
-  boardField.textContent = `id${boardField.dataset.key}, dl${downL}, dr${downR}`;
+  boardField.textContent = `id${boardField.dataset.key}, l${left}, dr${downR}`;
+  // console.log(boardField.dataset.key);
 
   // 3.2 COLLECTING VALUES
   let valOfIt = panelResult.filter(val => {
@@ -88,6 +89,41 @@ const countFields = function (panelResult) {
   downR = panelResult.filter(val => {
    return val.id === downR
   })
+
+  // BORDER CONTROL
+
+  // definitions
+  let borderLineV = boardField.dataset.key.slice(-2);
+  let borderLineH = boardField.dataset.key.slice(-4, 2);
+  // left
+  if (borderLineV <= 11 && left.length != 0 && topL.length != 0 && downL.length != 0) {
+   // let leftS = left[0]
+   // leftS['val'] = false;
+   left[0]['val'] = false;
+   topL[0]['val'] = false;
+   downL[0]['val'] = false;
+   console.log(left[0]['val'])
+  }
+  //right
+  if (borderLineV >= 20 && right.length != 0 && topR.length != 0 && downR.length != 0) {
+   right[0]['val'] = false;
+   topR[0]['val'] = false;
+   downR[0]['val'] = false;
+  }
+  // top
+  if (borderLineH <= 01 && top.length != 0 && topL.length != 0 && topR.length != 0) {
+   top[0]['val'] = false;
+   topL[0]['val'] = false;
+   topR[0]['val'] = false;
+  }
+  // down
+  if (borderLineV >= 20 && down.length != 0 && downL.length != 0 && downR.length != 0) {
+   down[0]['val'] = false;
+   downL[0]['val'] = false;
+   downR[0]['val'] = false;
+  }
+
+
 
   // 3.3 COUNTING POTENTIAL
   if (left.length != 0 && Object.values(left)[0].val) {
