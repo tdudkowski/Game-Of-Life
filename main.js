@@ -212,6 +212,7 @@ const render = () => {
 // RESET COUNTER
 const resetCounter = () => {
  counter.textContent = 0;
+ counterValue = 0;
 }
 
 render();
