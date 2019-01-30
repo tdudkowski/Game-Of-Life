@@ -123,8 +123,6 @@ const countFields = function (panelResult) {
    downR[0]['val'] = false;
   }
 
-
-
   // 3.4 COUNTING POTENTIAL
   if (left.length != 0 && Object.values(left)[0].val) {
    thisCounter++;
